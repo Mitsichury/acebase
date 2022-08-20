@@ -1340,7 +1340,7 @@ class BinaryBPlusTree {
                     if (!searchKey) {
                         return ret(); // results; //ret(results);
                     }
-                    else if ((0, typesafe_compare_1._isMore)(searchKey, leaf.entries[leaf.entries.length - 1].key)) {
+                    else if (leaf.entries.length > 0 && (0, typesafe_compare_1._isMore)(searchKey, leaf.entries[leaf.entries.length - 1].key)) {
                         return this._findLeaf(searchKey).then(processLeaf);
                     }
                     // Stay in the loop trying more keys on the same leaf
